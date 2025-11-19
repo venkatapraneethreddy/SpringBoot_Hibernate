@@ -1,0 +1,185 @@
+{
+  "info": {
+    "name": "Spring Demo API Collection",
+    "_postman_id": "abcd-1234-demo-collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+
+    {
+      "name": "Company",
+      "item": [
+        {
+          "name": "Create Company",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"TechCorp\",\n  \"location\": \"Hyderabad\"\n}"
+            },
+            "url": "http://localhost:8080/companies"
+          }
+        },
+        {
+          "name": "Get All Companies",
+          "request": { "method": "GET", "url": "http://localhost:8080/companies" }
+        },
+        {
+          "name": "Get Company by ID",
+          "request": { "method": "GET", "url": "http://localhost:8080/companies/1" }
+        },
+        {
+          "name": "Get Company by Name",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/companies/by-name?name=TechCorp"
+          }
+        },
+        {
+          "name": "Delete Company",
+          "request": { "method": "DELETE", "url": "http://localhost:8080/companies/1" }
+        }
+      ]
+    },
+
+    {
+      "name": "Employee",
+      "item": [
+        {
+          "name": "Create Employee (with Address + companyId)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/employees?companyId=1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@gmail.com\",\n  \"phone\": \"9999999999\",\n  \"address\": {\n    \"street\": \"MG Road\",\n    \"city\": \"Bangalore\",\n    \"state\": \"KA\",\n    \"zip\": \"560001\"\n  }\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Employees",
+          "request": { "method": "GET", "url": "http://localhost:8080/employees" }
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": { "method": "GET", "url": "http://localhost:8080/employees/1" }
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/employees/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"updated@gmail.com\",\n  \"phone\": \"8888888888\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": { "method": "DELETE", "url": "http://localhost:8080/employees/1" }
+        },
+        {
+          "name": "Get Projects for Employee",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/employees/1/projects"
+          }
+        }
+      ]
+    },
+
+    {
+      "name": "Project",
+      "item": [
+        {
+          "name": "Create Project in Company",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/projects?companyId=1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"AI Platform\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Assign Employee to Project",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8080/projects/1/employees/1"
+          }
+        },
+        {
+          "name": "Remove Employee from Project",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:8080/projects/1/employees/1"
+          }
+        },
+        {
+          "name": "Get Projects by Company",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/projects?companyId=1"
+          }
+        },
+        {
+          "name": "Get Employees in Project",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/projects/1/employees"
+          }
+        },
+        {
+          "name": "Delete Project",
+          "request": { "method": "DELETE", "url": "http://localhost:8080/projects/1" }
+        }
+      ]
+    },
+
+    {
+      "name": "Address",
+      "item": [
+        {
+          "name": "Create Address",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/addresses",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"street\":\"Test Street\",\n  \"city\":\"Test City\",\n  \"state\":\"TS\",\n  \"zip\":\"12345\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Addresses",
+          "request": { "method": "GET", "url": "http://localhost:8080/addresses" }
+        },
+        {
+          "name": "Get Address by ID",
+          "request": { "method": "GET", "url": "http://localhost:8080/addresses/1" }
+        },
+        {
+          "name": "Update Address",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "http://localhost:8080/addresses/1",
+            "body": { "mode": "raw", "raw": "{ \"street\": \"Updated Street\" }" }
+          }
+        },
+        {
+          "name": "Delete Address",
+          "request": { "method": "DELETE", "url": "http://localhost:8080/addresses/1" }
+        }
+      ]
+    }
+
+  ]
+}
