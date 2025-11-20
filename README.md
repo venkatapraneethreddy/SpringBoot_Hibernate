@@ -165,9 +165,3 @@ Controller: `GET /projects/{projectId}/employees` accepts `page`, `size`, `sort`
 ## Contributing
 
 Make changes, run tests and open PRs. Keep naming consistent and update `data.sql` when you rename entities/tables.
-
----
-
----
-
-*Generated README for the Spring Demo API project.*
