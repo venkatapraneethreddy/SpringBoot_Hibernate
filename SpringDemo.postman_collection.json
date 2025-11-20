@@ -1,7 +1,12 @@
 {
   "info": {
+<<<<<<< HEAD
     "name": "Spring Demo API Collection (Updated)",
     "_postman_id": "abcd-1234-demo-collection-updated",
+=======
+    "name": "Spring Demo API Collection",
+    "_postman_id": "abcd-1234-demo-collection",
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -54,7 +59,11 @@
             "url": "http://localhost:8080/employees?companyId=1",
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@gmail.com\",\n  \"phone\": \"9999999999\",\n  \"companyId\": 1,\n  \"address\": {\n    \"street\": \"MG Road\",\n    \"city\": \"Bangalore\",\n    \"state\": \"KA\",\n    \"zip\": \"560001\"\n  }\n}"
+=======
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@gmail.com\",\n  \"phone\": \"9999999999\",\n  \"address\": {\n    \"street\": \"MG Road\",\n    \"city\": \"Bangalore\",\n    \"state\": \"KA\",\n    \"zip\": \"560001\"\n  }\n}"
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
             }
           }
         },
@@ -74,7 +83,11 @@
             "url": "http://localhost:8080/employees/1",
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"updated@gmail.com\",\n  \"phone\": \"8888888888\",\n  \"companyId\": 1\n}"
+=======
+              "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"updated@gmail.com\",\n  \"phone\": \"8888888888\"\n}"
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
             }
           }
         },
@@ -103,7 +116,11 @@
             "url": "http://localhost:8080/projects?companyId=1",
             "body": {
               "mode": "raw",
+<<<<<<< HEAD
               "raw": "{\n  \"title\": \"AI Platform\",\n  \"employeeIds\": []\n}"
+=======
+              "raw": "{\n  \"title\": \"AI Platform\"\n}"
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
             }
           }
         },
@@ -128,6 +145,7 @@
             "url": "http://localhost:8080/projects?companyId=1"
           }
         },
+<<<<<<< HEAD
 
         {
           "name": "Get Employees in Project (Pagination + Sorting)",
@@ -143,6 +161,18 @@
             "method": "DELETE",
             "url": "http://localhost:8080/projects/1"
           }
+=======
+        {
+          "name": "Get Employees in Project",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8080/projects/1/employees"
+          }
+        },
+        {
+          "name": "Delete Project",
+          "request": { "method": "DELETE", "url": "http://localhost:8080/projects/1" }
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
         }
       ]
     },
@@ -176,10 +206,14 @@
             "method": "PUT",
             "header": [{ "key": "Content-Type", "value": "application/json" }],
             "url": "http://localhost:8080/addresses/1",
+<<<<<<< HEAD
             "body": {
               "mode": "raw",
               "raw": "{\n  \"street\": \"Updated Street\",\n  \"city\": \"Updated City\",\n  \"state\": \"UP\",\n  \"zip\": \"99887\"\n}"
             }
+=======
+            "body": { "mode": "raw", "raw": "{ \"street\": \"Updated Street\" }" }
+>>>>>>> e6be921d50ff3e445bc43a1919d947bdf03c51d4
           }
         },
         {
